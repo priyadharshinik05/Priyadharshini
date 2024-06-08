@@ -1,0 +1,15 @@
+s1 = input()
+s2 = input()
+words_s1 = s1.split()
+words_s2 = s2.split()
+all_words = words_s1 + words_s2
+word_count = {}
+for word in all_words:
+    word_count[word] = word_count.get(word, 0) + 1
+uncommon_words = []
+for word, count in word_count.items():
+    if count == 1:
+        if (word in words_s1 and word not in words_s2) or (word in words_s2 and word not in words_s1):
+            uncommon_words.append(word)
+
+print(*uncommon_words)  
