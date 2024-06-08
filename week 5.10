@@ -1,0 +1,18 @@
+def count_characters(s):
+    letter_count = 0
+    digit_count = 0
+    special_count = 0
+    for char in s:
+        if char.isalpha():
+            letter_count +=1
+        elif char.isdigit():
+            digit_count += 1
+        else:
+            special_count += 1
+
+    return letter_count, digit_count, special_count
+a=input()
+letters, digits, special_symbols = count_characters(a)
+print(letters)
+print(digits)
+print(special_symbols)
