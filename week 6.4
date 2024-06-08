@@ -1,0 +1,19 @@
+def check_increasing(lst):
+    increasing = all(lst[i] < lst[i+1] for i in range(len(lst)-1))
+    decreasing = all(lst[i] > lst[i+1] for i in range(len(lst)-1))
+    if increasing or decreasing:
+        return True
+    for i in range(len(lst)):
+        temp = lst[:i] + lst[i+1:]
+        if all(temp[j] < temp[j+1] for j in range(len(temp)-1)):
+            return True
+    return False
+n = int(input())
+lst = []
+for i in range(n):
+    element = int(input())
+    lst.append(element)
+if check_increasing(lst):
+    print("True")
+else:
+    print("False")
