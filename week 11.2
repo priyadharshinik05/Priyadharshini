@@ -1,0 +1,12 @@
+def perform_division():
+    try:
+        dividend = float(input())
+        divisor = float(input())
+        result = dividend / divisor
+        print(result)
+    except ValueError:
+        print("Error: Non-numeric input provided.")
+    except ZeroDivisionError:
+        print("Error: Cannot divide or modulo by zero.")
+
+perform_division()
