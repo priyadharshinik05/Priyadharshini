@@ -1,0 +1,15 @@
+def get_number_within_range(min_value, max_value):
+    try:
+        user_input = int(input())
+        if min_value <= user_input <= max_value:
+            print("Valid input.")
+        else:
+            print("Error: Number out of allowed range")
+    except ValueError:
+        print("Error: invalid literal for int()")
+
+# Define the range
+min_value = 1
+max_value = 100
+
+get_number_within_range(min_value, max_value)
