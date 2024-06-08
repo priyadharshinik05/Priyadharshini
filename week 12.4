@@ -1,0 +1,16 @@
+def process_sales(X, shoe_sizes, N, customer_requests):
+    inventory = {}  # Initialize inventory dictionary
+    total_revenue = 0
+    for size in shoe_sizes:
+        inventory[size] = inventory.get(size, 0) + 1
+    for size, price in customer_requests:
+        if size in inventory and inventory[size] > 0:
+            total_revenue += price  
+            inventory[size] -= 1 
+    return total_revenue
+X = int(input())
+shoe_sizes = list(map(int, input().split()))
+N = int(input())
+customer_requests = [tuple(map(int, input().split())) for _ in range(N)]
+total_revenue = process_sales(X, shoe_sizes, N, customer_requests)
+print(total_revenue)
